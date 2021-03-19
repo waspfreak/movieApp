@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {ProgressBar} from '../../src/Components/ProgressBar/ProgressBar';
+import {ProgressBar} from './ProgressBar';
 
 export default {
 	title: 'Example/ProgressBar',

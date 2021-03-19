@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {MovieCard} from '../../src/Components/Card/MovieCard';
+import {MovieCard} from './MovieCard';
 
 export default {
 	title: 'Example/Card',

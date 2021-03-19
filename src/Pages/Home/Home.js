@@ -8,7 +8,6 @@ import {
 } from '../../api/API';
 
 // Components
-//import HeroImage from './elements/HeroImage';
 import SearchBar from '../../Components/Search/SearchBar';
 import MovieWall from '../../Components/MovieWall/MovieWall';
 import MovieCard from '../../Components/Card/MovieCard';

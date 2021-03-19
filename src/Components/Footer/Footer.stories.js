@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Footer} from '../../src/Components/Footer/Footer';
+import {Footer} from './Footer';
 
 export default {
 	title: 'Example/Footer',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {SearchBar} from '../../src/Components/Search/SearchBar';
+import {SearchBar} from './SearchBar';
 
 export default {
 	title: 'Example/SearchBar',

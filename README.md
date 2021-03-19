@@ -14,6 +14,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+
+### `yarn storybook`
+
+Storybook is a tool for UI development. It makes development faster and easier by isolating components. This allows you to work on one component at a time.
+
+Open [http://localhost:6006/](http://localhost:6006/) to view it in the browser.
+
+Go to Folder 
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\

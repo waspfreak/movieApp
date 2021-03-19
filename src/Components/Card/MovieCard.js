@@ -22,9 +22,7 @@ export const MovieCard = ({
 }) => {
 	const [isModal, setModal] = useState(false);
 
-	const [movie, error] = useMovieFetch(movieId);
-
-	if (error) return <div>Something went wrong ...</div>;
+	const [movie] = useMovieFetch(movieId);
 
 	return (
 		<>
