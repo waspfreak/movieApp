@@ -65,9 +65,10 @@ export const Home = () => {
 									: NoImage
 							}
 							movieId={movie.id}
+							overview={movie.overview}
 							originalTitle={movie.original_title}
 							releaseDate={movie.release_date}
-							voteAverage={movie.vote_average}
+							voteAverage={parseFloat(movie.vote_average).toFixed(1) * 10}
 						/>
 					</>
 				))}

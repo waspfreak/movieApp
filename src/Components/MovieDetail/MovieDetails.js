@@ -9,31 +9,31 @@ import SimpleCard from '../Card/SimpleCard';
 import NoImage from '../../assets/no_image.jpg';
 
 // Environment Variables
-import {IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
+//import {IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
 
 // Styled Components
 import {StyledMovieDetails} from './style';
 
-export const MovieDetails = ({movie}) => (
+export const MovieDetails = ({
+	movie,
+	detailTitle,
+	posterPath,
+	modalOverview,
+	voteAverage,
+}) => (
 	<StyledMovieDetails backdrop={movie.backdrop_path}>
 		<div className='movie_details-content'>
 			<div className='movie_details-thumb'>
-				<SimpleCard
-					posterPath={
-						movie.poster_path
-							? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
-							: NoImage
-					}
-					alt={movie.title}
-				/>
+				<SimpleCard image={posterPath} alt={detailTitle} />
 			</div>
 			<div className='movie_details-text'>
-				<h3 className='movie_details_title'>{movie.title}</h3>
-				<p className='movie_details_description'>{movie.overview}</p>
+				<h3 className='movie_details_title'>{detailTitle}</h3>
+				<p className='movie_details_description'>{modalOverview}</p>
 				<div className='rating'>
 					<div className='score'>
 						<ProgressBar
-							progress={parseFloat(movie.vote_average).toFixed(1) * 10}
+							progress={voteAverage}
+							//progress={parseFloat({voteAverage}).toFixed(1) * 10}
 							size={50}
 							strokeWidth={4}
 							circleOneStroke='#3c0a0adb'

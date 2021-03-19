@@ -23,10 +23,6 @@ export const StyledMovieDetails = styled.div`
 
 	.movie_details-thumb {
 		margin-top: 20px;
-
-		/* @media screen and (max-width: 768px) {
-			width: 100% !important;
-		} */
 	}
 
 	.movie_details-text {

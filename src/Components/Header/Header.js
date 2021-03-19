@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import {StyledNavbar, Logo} from './style';
 
 export const Header = () => {

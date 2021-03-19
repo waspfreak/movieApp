@@ -12,6 +12,12 @@ import {useMovieFetch} from '../../hooks/useMovieFetch';
 // Styled Components
 import {StyledMovieCard} from './style';
 
+// Images
+import NoImage from '../../assets/no_image.jpg';
+
+// Environment Variables
+import {IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
+
 export const MovieCard = ({
 	image,
 	movieId,
@@ -19,6 +25,7 @@ export const MovieCard = ({
 	originalTitle,
 	releaseDate,
 	voteAverage,
+	overview,
 }) => {
 	const [isModal, setModal] = useState(false);
 
@@ -28,15 +35,26 @@ export const MovieCard = ({
 
 	return (
 		<>
-			<Modal isVisible={isModal} onClose={() => setModal(false)}>
-				<MovieDetails movie={movie} />
-			</Modal>
 			<StyledMovieCard onClick={() => setModal(true)}>
 				<>
 					{clickable ? (
 						<>
-							<img className='clickable' src={image} alt='moviecard' />
+							<Modal isVisible={isModal} onClose={() => setModal(false)}>
+								<img src={image} alt={originalTitle} />
+								<MovieDetails
+									modalOverview={overview}
+									detailTitle={originalTitle}
+									movie={movie}
+									posterPath={
+										movie.poster_path
+											? `${IMAGE_BASE_URL}${POSTER_SIZE}${image}`
+											: NoImage
+									}
+									voteAverage={voteAverage}
+								/>
+							</Modal>
 
+							<img className='clickable' src={image} alt={originalTitle} />
 							<div className='content'>
 								<div className='score'>
 									<ProgressBar

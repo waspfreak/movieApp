@@ -8,15 +8,23 @@ export const Footer = () => {
 	return (
 		<StyledFooter>
 			<div className='footer'>
-				<a className='link' href='https://www.themoviedb.org/'>
+				<a className='link' rel='noreferrer' href='https://www.themoviedb.org/'>
 					<StyledTMDBLogo src={TMDBLogo} alt='tmdb-logo' target='_blank' />
 				</a>
 				Crafted by{' '}
-				<a className='link' href='https://github.com/waspfreak' target='_blank'>
+				<a
+					className='link'
+					rel='noreferrer'
+					href='https://github.com/waspfreak'
+					target='_blank'>
 					Juliana Leon
 				</a>{' '}
 				with{' '}
-				<a className='link' href='https://reactjs.org/' target='_blank'>
+				<a
+					className='link'
+					rel='noreferrer'
+					href='https://reactjs.org/'
+					target='_blank'>
 					{' '}
 					React
 				</a>
