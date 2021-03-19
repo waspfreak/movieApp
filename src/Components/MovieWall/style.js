@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Style = styled.div`
+	font-family: 'Titillium Web', sans-serif;
 	max-width: 100%;
 	display: flex;
 	flex-direction: column;
