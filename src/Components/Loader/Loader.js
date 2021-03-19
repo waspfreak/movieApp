@@ -34,7 +34,7 @@ const SpinnerIcon = styled(Spinner)`
 	width: 4rem;
 `;
 
-const Loader = () => {
+export const Loader = () => {
 	return (
 		<Container>
 			<SpinnerIcon />

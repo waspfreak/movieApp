@@ -2,9 +2,13 @@ import React from 'react';
 import {SimpleCardStyles} from './style';
 import PropTypes from 'prop-types';
 
-const SimpleCard = ({originalTitle, posterPath}) => {
+/**
+ * Simple Card  UI component for user interaction
+ */
+
+export const SimpleCard = ({originalTitle, posterPath, ...props}) => {
 	return (
-		<SimpleCardStyles>
+		<SimpleCardStyles {...props}>
 			<img className='image' src={posterPath} alt={originalTitle} />
 		</SimpleCardStyles>
 	);

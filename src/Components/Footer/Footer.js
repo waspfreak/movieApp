@@ -4,7 +4,7 @@ import {StyledFooter, StyledTMDBLogo} from './style';
 
 import TMDBLogo from '../../assets/tmdb_logo.svg';
 
-const Footer = () => {
+export const Footer = () => {
 	return (
 		<StyledFooter>
 			<div className='footer'>

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import MovieCard from '../Card/MovieCard';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import SimpleCard from '../Card/SimpleCard';
 
@@ -15,7 +14,7 @@ import {IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
 // Styled Components
 import {StyledMovieDetails} from './style';
 
-const MovieDetails = ({movie}) => (
+export const MovieDetails = ({movie}) => (
 	<StyledMovieDetails backdrop={movie.backdrop_path}>
 		<div className='movie_details-content'>
 			<div className='movie_details-thumb'>

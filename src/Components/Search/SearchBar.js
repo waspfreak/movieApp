@@ -4,7 +4,7 @@ import {StyledSearchBar, StyledSearchBarContent} from './style';
 import RatingsFilter from '../RatingsFilter/RatingsFilter';
 import {Search} from '@styled-icons/boxicons-regular';
 
-const SearchBar = ({callback}) => {
+export const SearchBar = ({callback}) => {
 	const [state, setState] = useState('');
 	const timeOut = useRef(null);
 

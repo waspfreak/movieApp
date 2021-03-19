@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {StyledMovieWall, StyledMovieWallContent, Style} from './style';
 
-const MovieWall = ({header, children}) => (
+export const MovieWall = ({header, children}) => (
 	<Style>
 		<h2 className='title'>{header}</h2>
 		<StyledMovieWall>
