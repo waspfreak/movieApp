@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SearchStyles = styled.div`
+	font-family: 'Titillium Web', sans-serif;
 	.input {
 		height: 40px;
 		width: 100%;
