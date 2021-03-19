@@ -18,6 +18,7 @@ export const HeroItemStyles = styled.div`
 `;
 
 export const HeroTitle = styled.h2`
+	font-family: 'Titillium Web', sans-serif;
 	color: #fff;
 	display: inline-block;
 	font-size: 1.8em;

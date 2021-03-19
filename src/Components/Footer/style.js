@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledFooter = styled.div`
 	.footer {
+		font-family: 'Titillium Web', sans-serif;
 		overflow: hidden;
 		background: #2b2b2a;
 		font-size: 0.95rem;

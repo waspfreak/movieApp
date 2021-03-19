@@ -22,6 +22,7 @@ export const Circle = styled.circle`
 `;
 
 export const CircleText = styled.text`
+	font-family: 'Titillium Web', sans-serif;
 	font-size: 14px;
 	text-anchor: middle;
 	fill: white;
