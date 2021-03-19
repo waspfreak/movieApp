@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 // Styled Components
 import {StyledMovieModal} from './style';
 
-const Modal = ({isVisible = false, children, onClose}) => {
+export const Modal = ({isVisible = false, children, onClose}) => {
 	useEffect(() => {
 		document.addEventListener('keydown', keydownHandler);
 		return () => document.removeEventListener('keydown', keydownHandler);

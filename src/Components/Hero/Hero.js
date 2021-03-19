@@ -10,7 +10,7 @@ import {IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
 // Images
 import NoImage from '../../assets/no_image.jpg';
 
-const Hero = (posterPath) => {
+export const Hero = (posterPath) => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [
 		{

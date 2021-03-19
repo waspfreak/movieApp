@@ -4,6 +4,7 @@ export const Container = styled.div`
 	background: #111;
 	border-radius: 50%;
 	padding: 2px;
+	display: inline-block;
 `;
 
 export const Svg = styled.svg`

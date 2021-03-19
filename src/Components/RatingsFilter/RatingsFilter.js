@@ -10,7 +10,7 @@ import {FILTER_BASE_URL, IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
 // Styled Components
 import {StyledRatingsFilter} from './style';
 
-const RatingsFilter = () => {
+export const RatingsFilter = () => {
 	const [selected, setSelected] = useState(false);
 	const [ratings, setRatings] = useState([]);
 

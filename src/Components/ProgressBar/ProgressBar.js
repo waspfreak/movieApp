@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {Svg, CircleBg, Circle, CircleText, Container} from './style';
 
-const ProgressBar = (props) => {
+export const ProgressBar = (props) => {
 	const [offset, setOffset] = useState(0);
 	const circleRef = useRef(null);
 	const {size, progress, strokeWidth, circleOneStroke, circleTwoStroke} = props;

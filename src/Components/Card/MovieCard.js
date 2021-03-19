@@ -6,13 +6,13 @@ import moment from 'moment';
 // Components
 import Modal from '../Modal/Modal';
 import MovieDetails from '../MovieDetail/MovieDetails';
-import Loader from '../Loader/Loader';
+
 // Custom Hook
 import {useMovieFetch} from '../../hooks/useMovieFetch';
 // Styled Components
 import {StyledMovieCard} from './style';
 
-const MovieCard = ({
+export const MovieCard = ({
 	image,
 	movieId,
 	clickable,

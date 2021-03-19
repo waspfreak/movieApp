@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SimpleCardStyles = styled.div`
+  font-family: "Titillium Web", sans-serif;  
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -22,6 +23,7 @@ export const SimpleCardStyles = styled.div`
 `;
 
 export const StyledMovieCard = styled.div`
+	font-family: 'Titillium Web', sans-serif;
 	display: flex;
 	flex-direction: column;
 	display: flex;

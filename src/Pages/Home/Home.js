@@ -25,7 +25,7 @@ import {useNowPlayingFetch} from '../../hooks/useNowPlayingFetch';
 import NoImage from '../../assets/no_image.jpg';
 import Hero from '../../Components/Hero/Hero';
 
-const Home = () => {
+export const Home = () => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [
 		{
