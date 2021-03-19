@@ -17,6 +17,7 @@ const scale = keyframes`
 `;
 
 const Container = styled.div`
+	font-family: 'Titillium Web', sans-serif;
 	position: fixed;
 	animation: ${scale} 1.5s linear infinite;
 	width: 100%;

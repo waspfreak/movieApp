@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledRatingsFilter = styled.div`
+	font-family: 'Titillium Web', sans-serif;
 	width: 30%;
 	position: absolute;
 	left: 30%;
