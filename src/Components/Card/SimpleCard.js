@@ -6,16 +6,17 @@ import PropTypes from 'prop-types';
  * Simple Card  UI component for user interaction
  */
 
-export const SimpleCard = ({originalTitle, posterPath, ...props}) => {
+export const SimpleCard = ({originalTitle, posterPath, id, ...props}) => {
 	return (
-		<SimpleCardStyles {...props}>
+		<SimpleCardStyles {...props} key={id}>
 			<img className='image' src={posterPath} alt={originalTitle} />
 		</SimpleCardStyles>
 	);
 };
 
 SimpleCard.propTypes = {
-	originalTitle: PropTypes.string.isRequired,
+	id: PropTypes.any,
+	originalTitle: PropTypes.string,
 	posterPath: PropTypes.string.isRequired,
 };
 

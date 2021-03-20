@@ -1,11 +1,6 @@
 import styled from 'styled-components';
-import {IMAGE_BASE_URL, BACKDROP_SIZE} from '../../api/API';
 
 export const StyledMovieDetails = styled.div`
-	background: ${(props) =>
-		props.backdrop
-			? `url('${IMAGE_BASE_URL}${BACKDROP_SIZE}${props.backdrop}')`
-			: 'rgba(0,0,0,.5)'};
 	background-size: cover !important;
 	background-position: center !important;
 	width: 100%;

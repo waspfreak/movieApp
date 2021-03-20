@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 
 // Components
 import ProgressBar from '../ProgressBar/ProgressBar';
-import SimpleCard from '../Card/SimpleCard';
-
-// Images
-import NoImage from '../../assets/no_image.jpg';
-
-// Environment Variables
-//import {IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
 
 // Styled Components
 import {StyledMovieDetails} from './style';
+
+/**
+ * Movie Detail UI component for user interaction
+ */
 
 export const MovieDetails = ({
 	movie,
@@ -21,10 +18,15 @@ export const MovieDetails = ({
 	modalOverview,
 	voteAverage,
 }) => (
-	<StyledMovieDetails backdrop={movie.backdrop_path}>
+	<StyledMovieDetails>
 		<div className='movie_details-content'>
 			<div className='movie_details-thumb'>
-				<SimpleCard image={posterPath} alt={detailTitle} />
+				<img
+					width='300px'
+					style={{width: '300px'}}
+					src={posterPath}
+					alt={detailTitle}
+				/>
 			</div>
 			<div className='movie_details-text'>
 				<h3 className='movie_details_title'>{detailTitle}</h3>
@@ -33,7 +35,6 @@ export const MovieDetails = ({
 					<div className='score'>
 						<ProgressBar
 							progress={voteAverage}
-							//progress={parseFloat({voteAverage}).toFixed(1) * 10}
 							size={50}
 							strokeWidth={4}
 							circleOneStroke='#3c0a0adb'

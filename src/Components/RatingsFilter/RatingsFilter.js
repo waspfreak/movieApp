@@ -10,6 +10,10 @@ import {FILTER_BASE_URL, IMAGE_BASE_URL, POSTER_SIZE} from '../../api/API';
 // Styled Components
 import {StyledRatingsFilter} from './style';
 
+/**
+ * Ratings Filter UI component for user interaction
+ */
+
 export const RatingsFilter = () => {
 	const [selected, setSelected] = useState(false);
 	const [ratings, setRatings] = useState([]);
@@ -18,7 +22,6 @@ export const RatingsFilter = () => {
 		async function fetchData() {
 			const response = await fetch(FILTER_BASE_URL);
 			const data = await response.json();
-
 			setRatings(data.results);
 		}
 		fetchData();
@@ -34,18 +37,19 @@ export const RatingsFilter = () => {
 				.filter((movie) => movie.vote_average > 8)
 				.map((movie) => (
 					<>
-						<MovieCard
-							key={movie.id}
-							clickable
-							image={
-								movie.poster_path
-									? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-									: null
-							}
-							movieId={movie.id}
-							originalTitle={movie.original_title}
-							voteAverage={movie.vote_average}
-						/>
+						<div key={movie.id}>
+							<MovieCard
+								movieId={movie.id}
+								clickable
+								image={
+									movie.poster_path
+										? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+										: null
+								}
+								originalTitle={movie.original_title}
+								voteAverage={parseFloat(movie.vote_average).toFixed(1) * 10}
+							/>
+						</div>
 					</>
 				))}
 		</MovieWall>
@@ -58,18 +62,20 @@ export const RatingsFilter = () => {
 					.filter((movie) => movie.vote_average <= 8 && movie.vote_average >= 6)
 					.map((movie) => (
 						<>
-							<MovieCard
-								key={movie.id}
-								clickable
-								image={
-									movie.poster_path
-										? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-										: null
-								}
-								movieId={movie.id}
-								originalTitle={movie.original_title}
-								voteAverage={movie.vote_average}
-							/>
+							<div key={movie.id}>
+								<MovieCard
+									key={movie.id}
+									clickable
+									image={
+										movie.poster_path
+											? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+											: null
+									}
+									movieId={movie.id}
+									originalTitle={movie.original_title}
+									voteAverage={parseFloat(movie.vote_average).toFixed(1) * 10}
+								/>
+							</div>
 						</>
 					))}
 			</MovieWall>
@@ -83,18 +89,20 @@ export const RatingsFilter = () => {
 					.filter((movie) => movie.vote_average <= 6 && movie.vote_average >= 4)
 					.map((movie) => (
 						<>
-							<MovieCard
-								key={movie.id}
-								clickable
-								image={
-									movie.poster_path
-										? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-										: null
-								}
-								movieId={movie.id}
-								originalTitle={movie.original_title}
-								voteAverage={movie.vote_average}
-							/>
+							<div key={movie.id}>
+								<MovieCard
+									key={movie.id}
+									clickable
+									image={
+										movie.poster_path
+											? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+											: null
+									}
+									movieId={movie.id}
+									originalTitle={movie.original_title}
+									voteAverage={parseFloat(movie.vote_average).toFixed(1) * 10}
+								/>
+							</div>
 						</>
 					))}
 			</MovieWall>
@@ -107,18 +115,20 @@ export const RatingsFilter = () => {
 				.filter((movie) => movie.vote_average <= 4 && movie.vote_average >= 2)
 				.map((movie) => (
 					<>
-						<MovieCard
-							key={movie.id}
-							clickable
-							image={
-								movie.poster_path
-									? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-									: null
-							}
-							movieId={movie.id}
-							originalTitle={movie.original_title}
-							voteAverage={movie.vote_average}
-						/>
+						<div key={movie.id}>
+							<MovieCard
+								key={movie.id}
+								clickable
+								image={
+									movie.poster_path
+										? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+										: null
+								}
+								movieId={movie.id}
+								originalTitle={movie.original_title}
+								voteAverage={parseFloat(movie.vote_average).toFixed(1) * 10}
+							/>
+						</div>
 					</>
 				))}
 		</MovieWall>
@@ -130,18 +140,20 @@ export const RatingsFilter = () => {
 				.filter((movie) => movie.vote_average <= 2 && movie.vote_average >= 0)
 				.map((movie) => (
 					<>
-						<MovieCard
-							clickable
-							key={movie.id}
-							image={
-								movie.poster_path
-									? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-									: null
-							}
-							movieId={movie.id}
-							originalTitle={movie.original_title}
-							voteAverage={movie.vote_average}
-						/>
+						<div key={movie.id}>
+							<MovieCard
+								clickable
+								key={movie.id}
+								image={
+									movie.poster_path
+										? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+										: null
+								}
+								movieId={movie.id}
+								originalTitle={movie.original_title}
+								voteAverage={parseFloat(movie.vote_average).toFixed(1) * 10}
+							/>
+						</div>
 					</>
 				))}
 		</MovieWall>

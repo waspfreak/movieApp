@@ -4,6 +4,10 @@ import {StyledFooter, StyledTMDBLogo} from './style';
 
 import TMDBLogo from '../../assets/tmdb_logo.svg';
 
+/**
+ * Footer  UI component for user interaction
+ */
+
 export const Footer = () => {
 	return (
 		<StyledFooter>

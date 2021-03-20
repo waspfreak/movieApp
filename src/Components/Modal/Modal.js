@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
-
-// Styled Components
 import {StyledMovieModal} from './style';
+
+/**
+ * Modal UI component for user interaction
+ */
 
 export const Modal = ({isVisible = false, children, onClose}) => {
 	useEffect(() => {
@@ -17,7 +19,6 @@ export const Modal = ({isVisible = false, children, onClose}) => {
 			default:
 		}
 	}
-
 	return !isVisible ? null : (
 		<StyledMovieModal>
 			<div className='modal' onClick={onClose}>
