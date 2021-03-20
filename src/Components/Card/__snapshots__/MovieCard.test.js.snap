@@ -32,6 +32,7 @@ exports[`MovieCard should match snapshot 1`] = `
 }
 
 .c0 {
+  position: unset;
   font-family: 'Titillium Web',sans-serif;
   display: -webkit-box;
   display: -webkit-flex;
@@ -50,10 +51,12 @@ exports[`MovieCard should match snapshot 1`] = `
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
-  -webkit-transition: -webkit-transform 0.45s;
-  -webkit-transition: transform 0.45s;
-  transition: transform 0.45s;
-  width: 257px;
+  -webkit-transition: -webkit-transform 1.45s;
+  -webkit-transition: transform 1.45s;
+  transition: transform 1.45s;
+  max-width: 250px;
+  width: 100%;
+  margin-inline: 10px;
   margin-bottom: 20px;
   cursor: pointer;
   opacity: 0.9;
@@ -117,36 +120,58 @@ exports[`MovieCard should match snapshot 1`] = `
   border: none;
 }
 
-@media screen and (min-width:1500px) {
+@media screen and (max-width:1369) {
   .c0 {
-    width: 18%;
-    margin-inline: 1%;
+    max-width: 243px;
+    width: 100%;
   }
 }
 
-@media screen and (max-width:1499px) {
+@media screen and (max-width:1023px) {
   .c0 {
-    width: 18%;
-    margin-inline: 1%;
+    max-width: 243px;
+    width: 100%;
   }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:770px) {
   .c0 {
-    width: 23%;
-    margin-inline: 1%;
-  }
-}
-
-@media screen and (max-width:777px) {
-  .c0 {
-    width: 31%;
-    margin-inline: 1%;
+    max-width: 215px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width:600px) {
   .c0 {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:1023px) {
+  .c0 {
+    max-width: 243px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:1370) {
+  .c0 {
+    max-width: 243px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:770px) {
+  .c0 {
+    max-width: 320px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .c0 {
+    max-width: 100%;
     width: 100%;
   }
 }
@@ -156,7 +181,7 @@ exports[`MovieCard should match snapshot 1`] = `
     class="c0"
   >
     <img
-      alt="moviecard"
+      alt="Movie Original title"
       class="clickable"
       src="http://image.tmdb.org/t/p/w500/lPsD10PP4rgUGiGR4CCXA6iY0QQ.jpg"
     />
@@ -189,7 +214,7 @@ exports[`MovieCard should match snapshot 1`] = `
               r="23"
               stroke="red"
               stroke-dasharray="144.51326206513048"
-              stroke-dashoffset="-650.3096792930871"
+              stroke-dashoffset="65.03096792930872"
               stroke-width="4"
               style="transition: stroke-dashoffset 850ms ease-in-out;"
             />
@@ -198,7 +223,7 @@ exports[`MovieCard should match snapshot 1`] = `
               x="25"
               y="25"
             >
-              550
+              55
               %
             </text>
           </svg>
@@ -212,7 +237,11 @@ exports[`MovieCard should match snapshot 1`] = `
       <p
         class="content-data"
       >
-        January 1, 2001
+        <time
+          datetime="978307200000"
+        >
+          Mon Jan 01 2001 00:00:00 GMT+0000
+        </time>
       </p>
     </div>
   </div>

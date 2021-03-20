@@ -1,11 +1,54 @@
-# Getting Started with Create React App
+<h3 align="center">The MoveApp (Netflix Clone) </h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+
+[![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+
+[The MoveApp - Netfly Demo 🔗](https://silly-kirch-5f0330.netlify.app/)
+</div>
+
+## Summary
+
+- [About](#about)
+- [Getting Started](#getting_started) 
+- [Prerequisites](#prerequisites)
+- [Documentation](#Documentation)
+- [Built Using](#built_using)
+- [Author](#author)
+
+## About 
+This project  using The Movie Database (TMDb) API and React. Also focus in Web responsiveness and modern coding practices like React Hooks, Styled-Components, Storybook and Jest for Snapshots.
+
+## Getting Started <a name = "getting_started"></a>
+
+The documentation of the project can be found under [Documentation](#documentation) section.
+
+The documentation of **TMDb** can be found here: [TMDb documentation](https://developers.themoviedb.org/3/getting-started/introduction)
+
+The documentation of **React** and **Hooks** for reference: [React](https://reactjs.org/) and [Hooks](https://reactjs.org/docs/hooks-overview.html).
+
+The documentation for **Storybook** for reference: [Storybook](https://storybook.js.org/)
+
+The documentation for **Styled-Components** for reference [Styled-Components](https://styled-components.com/)
+
+## Prerequisites
+
+This project use at least **React 16.8**, because React introduced [Hooks](https://reactjs.org/docs/hooks-overview.html) on this release.
+
+For efficiency and organized development I prefer styling **React Components** with [styled-components](https://styled-components.com/).
+
+As my package manager i'm using [Yarn](https://classic.yarnpkg.com/en/docs/install/)
+
+
+I prefer to work with **Typescript**, but the vast majority of the Web still uses **Javascript**. So, for compatibility reasons, I will work with Javascript and add [PropTypes](https://www.npmjs.com/package/prop-types) on this project as it adds the **Static Types** functionality to Javascript.
+
+### Installing locally
+
+**git clone** this project locally in any folder of your computer, **install dependencies** and **run on the web browser**:
 
 ## Available Scripts
 
 In the project directory, you can run:
-
 ### `yarn start`
 
 Runs the app in the development mode.\
@@ -13,7 +56,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
 
 ### `yarn storybook`
 
@@ -26,54 +68,120 @@ Go to Folder
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Documentation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### API Environment
 
-### `yarn eject`
+For getting data from **TMDb API** efficiently we need to store the **URLs** in **_variables_**/**_constants_**. This will avoid repeated URLs typing. You can name your constants the way you want, but try to keep it meaningful:
+```js
+// THE BASE API URL
+const API_URL = "https://api.themoviedb.org/3/";
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+// GET YOUR KEY FROM TMDB DEVELOPER API
+const API_KEY = "put your KEY from TMDb API";
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+// THE URL WHICH TRIGGERS SEARCH
+const SEARCH_BASE_URL = `${API_URL}search/movie?api_key=${API_KEY}&query=`;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+// THE URL WHICH TRIGGERS TRENDING NOW  MOVIES
+const TRENDING_NOW = `${API_URL}/trending/all/day?api_key=${API_KEY}`;
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+// THE URL WHICH TRIGGERS NOW_PLAYING MOVIES
 
-## Learn More
+const NOW_PLAYING = `${API_URL}movie/now_playing?api_key=${API_KEY}&page=1`;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+// THE BASE URL WHICH TRIGGERS IMAGES
+const IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+// THE SIZE OF ALTERNATIVE BACKDROP IMAGES
+const BACKDROP_SIZE = "w1280";
 
-### Code Splitting
+// THE SIZE OF MOVIES POSTER IMAGES
+const POSTER_SIZE = "w500";
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Ratings Star Filter
 
-### Analyzing the Bundle Size
+In **RatingsFilter Component** we will restrict movies based on vote_average of the **TMDb API**.  To create that functionality we will use a `radio input HTML Element` which will mimic a star rating system and `useState Hook` to store the filtered ratings then restrict the results based on the radio id
+```js
+// VERIFY ANY VALUE CHANGES IN target.id AND UPDATE ratings ACCORDINGLY
+  const handleInputChange = (e) => {
+    setSelected(e.target.id);
+  };
+  ...
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+###  Search Movies
 
-### Making a Progressive Web App
+When  user types in  **Search Bar** it will return movies based on what is typed  without the necessity to press `Enter`. This gives a better user experience
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```js
+const doSearch = (event) => {
+  // TRACKS THE USER INPUTS event.target
+  const { value } = event.target;
+  // SET A DELAY (1s) TO USER SEARCH QUERY AND AVOID ABRUPT RENDERING
+  clearTimeout(timeOut.current);
+  // STORE INPUTS IN value AND RETURN DATA WITH callback TO Home COMPONENT
+  setState(value);
 
-### Advanced Configuration
+  timeOut.current = setTimeout(() => {
+    callback(value);
+  }, 500);
+};
+```
+This will return the movies inside the `callback(value)`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Styled Components
 
-### Deployment
+With `styled-components` the development turns easier exemple:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```js
+<StyledRatingsFilter>
+    ...
+    <StyledMovieWall>
+        <StyledMovieCard>
+        {
+            ...
+        }
+        </StyledMovieCard>
+    </StyledMovieWall>
+</StyledRatingsFilter>
 
-### `yarn build` fails to minify
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## PropTypes
+
+With `PropTypes` we can enforce static types behavior by forcing `types` for every `props` in `React`. It's almost the same as `Static Types` in **TypeScript**:
+
+```js
+ProgressBar.propTypes = {
+size: PropTypes.number.isRequired,
+progress: PropTypes.number.isRequired,
+strokeWidth: PropTypes.number.isRequired,
+circleOneStroke: PropTypes.string.isRequired,
+circleTwoStroke: PropTypes.string.isRequired,
+};
+```
+
+## Built Using <a name = "built_using"></a>
+
+- [VSCode](https://code.visualstudio.com/) 
+- [Git](https://git-scm.com/) 
+- [React](https://reactjs.org/)
+- [Hooks](https://reactjs.org/docs/hooks-overview.html) 
+- [PropTypes](https://www.npmjs.com/package/prop-types) 
+- [Styled Components](https://styled-components.com/) 
+- [Storybook](https://storybook.js.org/)
+- [TMDb](https://developers.themoviedb.org/3/getting-started/introduction) 
+- [Snapshot Testing](https://jestjs.io/docs/snapshot-testing)
+
+## ✍️ Author <a name = "author"></a>
+Juliana Leon [Github](https://github.com/waspfreak)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -36,7 +36,9 @@ exports[`Hero should match snapshot 1`] = `
     </h2>
     <div
       class="c2"
-    />
+    >
+      loading...
+    </div>
   </div>
 </div>
 `;

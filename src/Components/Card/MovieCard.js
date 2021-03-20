@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import Moment from 'react-moment';
+
 // Components
 import Modal from '../Modal/Modal';
 import MovieDetails from '../MovieDetail/MovieDetails';
@@ -47,7 +49,7 @@ export const MovieCard = ({
 								</div>
 								<h2 className='content-title'>{originalTitle}</h2>
 								<p className='content-data'>
-									{moment(releaseDate).format('LL')}
+									<Moment date={moment(releaseDate).format()} />
 								</p>
 							</div>
 						</>

@@ -52,7 +52,7 @@ export const ProgressBar = (props) => {
 
 ProgressBar.propTypes = {
 	size: PropTypes.number.isRequired,
-	progress: PropTypes.number.isRequired,
+	progress: PropTypes.string.isRequired,
 	strokeWidth: PropTypes.number.isRequired,
 	circleOneStroke: PropTypes.string.isRequired,
 	circleTwoStroke: PropTypes.string.isRequired,

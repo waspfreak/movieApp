@@ -49,6 +49,7 @@ exports[`Footer should match snapshot 1`] = `
       <a
         class="link"
         href="https://www.themoviedb.org/"
+        rel="noreferrer"
       >
         <img
           alt="tmdb-logo"
@@ -62,6 +63,7 @@ exports[`Footer should match snapshot 1`] = `
       <a
         class="link"
         href="https://github.com/waspfreak"
+        rel="noreferrer"
         target="_blank"
       >
         Juliana Leon
@@ -72,6 +74,7 @@ exports[`Footer should match snapshot 1`] = `
       <a
         class="link"
         href="https://reactjs.org/"
+        rel="noreferrer"
         target="_blank"
       >
          
