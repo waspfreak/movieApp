@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {MovieWall} from '../Components/MovieWall/MovieWall';
+import {MovieWall} from './MovieWall';
 
 export default {
 	title: 'Example/MovieWall',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Hero} from '../../src/Components/Hero/Hero';
+import {Hero} from './Hero';
 
 export default {
 	title: 'Example/Hero',

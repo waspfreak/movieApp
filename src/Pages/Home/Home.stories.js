@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Home} from '../../src/Pages/Home/Home';
+import {Home} from './Home';
 
 export default {
 	title: 'Example/Home',

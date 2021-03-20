@@ -15,8 +15,8 @@ export const SimpleCard = ({originalTitle, posterPath, id, ...props}) => {
 };
 
 SimpleCard.propTypes = {
-	id: PropTypes.any,
 	originalTitle: PropTypes.string,
+	id: PropTypes.string,
 	posterPath: PropTypes.string.isRequired,
 };
 

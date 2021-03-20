@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {RatingsFilter} from '../../src/Components/RatingsFilter/RatingsFilter';
+import {RatingsFilter} from './RatingsFilter';
 
 export default {
 	title: 'Example/RatingsFilter',
