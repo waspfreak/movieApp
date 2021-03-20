@@ -23,15 +23,17 @@ export const SimpleCardStyles = styled.div`
 `;
 
 export const StyledMovieCard = styled.div`
+	position: unset;
 	font-family: 'Titillium Web', sans-serif;
 	display: flex;
 	flex-direction: column;
 	display: flex;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	transition: transform 0.45s;
-	width: 257px;
-	/* margin-inline: 10px; */
+	transition: transform 1.45s;
+	max-width: 250px;
+	width: 100%;
+	margin-inline: 10px;
 	margin-bottom: 20px;
 	cursor: pointer;
 	opacity: 0.9;
@@ -63,6 +65,24 @@ export const StyledMovieCard = styled.div`
 			color: #948c8c;
 		}
 	}
+	@media screen and (max-width: 1369) {
+		max-width: 243px;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 1023px) {
+		max-width: 243px;
+		width: 100%;
+	}
+
+	@media screen and (max-width: 770px) {
+		max-width: 215px;
+		width: 100%;
+	}
+	@media screen and (max-width: 600px) {
+		max-width: 100%;
+		width: 100%;
+	}
 
 	.score {
 		position: absolute;
@@ -76,23 +96,21 @@ export const StyledMovieCard = styled.div`
 		object-fit: cover;
 		border: none;
 	}
-	@media screen and (min-width: 1500px) {
-		width: 18%;
-		margin-inline: 1%;
+	@media screen and (max-width: 1023px) {
+		max-width: 243px;
+		width: 100%;
 	}
-	@media screen and (max-width: 1499px) {
-		width: 18%;
-		margin-inline: 1%;
+
+	@media screen and (max-width: 1370) {
+		max-width: 243px;
+		width: 100%;
 	}
-	@media screen and (max-width: 1024px) {
-		width: 23%;
-		margin-inline: 1%;
-	}
-	@media screen and (max-width: 777px) {
-		width: 31%;
-		margin-inline: 1%;
+	@media screen and (max-width: 770px) {
+		max-width: 320px;
+		width: 100%;
 	}
 	@media screen and (max-width: 600px) {
+		max-width: 100%;
 		width: 100%;
 	}
 `;

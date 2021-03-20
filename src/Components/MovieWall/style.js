@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Style = styled.div`
 	font-family: 'Titillium Web', sans-serif;
-	max-width: 100%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	padding: 0 20px;
@@ -25,7 +25,7 @@ export const StyledMovieWall = styled.div`
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	padding: 0 20px;
+	padding: 0;
 `;
 
 export const StyledMovieWallContent = styled.div`

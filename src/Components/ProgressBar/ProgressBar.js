@@ -2,6 +2,10 @@ import React, {useEffect, useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {Svg, CircleBg, Circle, CircleText, Container} from './style';
 
+/**
+ * Progress Bar UI component for user interaction
+ */
+
 export const ProgressBar = (props) => {
 	const [offset, setOffset] = useState(0);
 	const circleRef = useRef(null);

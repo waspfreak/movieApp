@@ -1,5 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import {StyledNavbar, Logo} from './style';
+
+/**
+ *Header UI component for user interaction
+ */
 
 export const Header = () => {
 	return (

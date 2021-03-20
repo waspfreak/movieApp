@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 import {StyledMovieWall, StyledMovieWallContent, Style} from './style';
 
+/**
+ * MovieWall UI component for user interaction
+ */
+
 export const MovieWall = ({header, children}) => (
 	<Style>
 		<h2 className='title'>{header}</h2>
