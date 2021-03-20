@@ -18,12 +18,24 @@ export const StyledMovieDetails = styled.div`
 
 	.movie_details-thumb {
 		margin-top: 20px;
+		.image-thumb {
+			width: 300px;
+			@media screen and (max-width: 700px) {
+				width: 100%;
+				opacity: 0.5;
+			}
+		}
 	}
-
 	.movie_details-text {
 		color: rgba(239, 235, 231, 0.9);
 		overflow: hidden;
 		padding: 16px;
+
+		@media screen and (max-width: 700px) {
+			position: absolute;
+			margin-top: 25%;
+		}
+
 		.movie_details_title {
 			font-size: 48px;
 		}

@@ -21,12 +21,7 @@ export const MovieDetails = ({
 	<StyledMovieDetails>
 		<div className='movie_details-content'>
 			<div className='movie_details-thumb'>
-				<img
-					width='300px'
-					style={{width: '300px'}}
-					src={posterPath}
-					alt={detailTitle}
-				/>
+				<img className='image-thumb' src={posterPath} alt={detailTitle} />
 			</div>
 			<div className='movie_details-text'>
 				<h3 className='movie_details_title'>{detailTitle}</h3>
