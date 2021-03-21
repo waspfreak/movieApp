@@ -47,9 +47,7 @@ exports[`Header should match snapshot 1`] = `
     <div
       class="c1"
     >
-      <h1>
-        App Movies
-      </h1>
+      <h1 />
     </div>
   </nav>
 </div>

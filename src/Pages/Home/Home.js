@@ -44,7 +44,7 @@ export const Home = () => {
 	return (
 		<>
 			<GlobalStyle />
-			<Header />
+			<Header getByTestId='app-header' title='App Movies' />
 			<Hero />
 			<SearchBar callback={searchMovies} />
 			{error && <p>something went wrong</p>}
